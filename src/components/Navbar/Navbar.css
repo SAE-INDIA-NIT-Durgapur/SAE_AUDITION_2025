@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --nav-color-1: #0f1016;
+  --text-color: #f0f0f0;
+  --nav-accent-color: rgb(166, 4, 4);
+}
+
+.saeNav {
+  height: 60px;
+  background-color: var(--nav-color-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links-container {
+  display: flex;
+  align-items: center;
+}
+
+.saeNav a {
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.saeNav a:hover {
+  color: var(--nav-accent-color);
+}
+
+.saeNav a.active {
+  font-weight: bold;
+  color: var(--nav-accent-color);
+  border-bottom: 2px solid var(--nav-accent-color);
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .nav-links-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 11;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--nav-color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease-out;
+    padding-top: 40px; /* Reduced from 60px to 40px */
+  }
+
+  .nav-links-container.open {
+    right: 0;
+  }
+
+  .saeNav a {
+    width: 100%;
+    padding: 10px 30px; /* Reduced from 20px to 10px */
+    justify-content: flex-start;
+  }
+
+  .saeNav a + a {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Add a subtle separator */
+  }
+
+  .open-sidebar-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .close-sidebar-button {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+

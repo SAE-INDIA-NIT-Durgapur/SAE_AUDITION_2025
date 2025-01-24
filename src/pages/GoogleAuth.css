@@ -1,0 +1,85 @@
+.gcontain{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
+
+.logo{
+    width: 8%;
+    margin-left: 5%;
+    margin-top: 1.5vh;
+}
+.l{
+  width: 100%;
+  display: flex;
+
+}
+#gif{
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+.gcontent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.glogo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        height: auto;
+        width: 100%;
+    }
+
+}
+/* .foot{
+  text-align: center;
+  width: 100vw;
+  background: linear-gradient(-30deg, #3B02ED, #8E2AE0 55%);
+  p{
+    color: white;
+  }
+} */
+#gtext{
+    width: 50%;
+    height: auto;
+}
+.g-auth{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  h1{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 5vh;
+  }
+
+
+}
