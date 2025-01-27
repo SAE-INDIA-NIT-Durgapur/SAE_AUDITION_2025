@@ -7,9 +7,15 @@ function KnowMoreAbtSae() {
 
   return (
     <div class="btnctn">
-      <div class="knowmoreabtsatbutton">
-        <span>More About SAE</span>
-      </div>
+     
+        <a className="playbtn " href="https://saenitd.in" >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          KNOW MORE ABOUT SAE
+        </a>
+     
     </div>
   );
 }

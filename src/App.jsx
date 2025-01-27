@@ -12,24 +12,26 @@ import LandingLayout from "./Layouts/LandingLayout";
 import MainLayout from "./Layouts/MainLayout";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import Formsubmitted from "./pages/FormSubmitted/Formsubmitted";
+import Background from "./pages/Background/Background";
 
 function App() {
   return (
     <>
       <Routes>
         <Route
-          path="/"
+          path="/googleAuth"
           element={
-            <LandingLayout>
+            <MainLayout>
               <GoogleAuth />
-            </LandingLayout>
+            </MainLayout>
           }
         />
 
         <Route
-          path="/home"
+          path="/"
           element={
             <MainLayout>
+              <Background/>
               <HomePage />
             </MainLayout>
           }
@@ -48,6 +50,7 @@ function App() {
           path="/register"
           element={
             <MainLayout>
+              <Background/>
               <RegisterPage />
             </MainLayout>
           }

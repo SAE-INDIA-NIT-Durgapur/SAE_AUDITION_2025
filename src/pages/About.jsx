@@ -13,42 +13,12 @@ function About() {
   }, []);
   return (
     <>
-      <div className="w-full overflow-hidden bg-black">
+      <div className="w-full overflow-hidden ">
         <div className="overflow-hidden w-full">
           <Carousal />
         </div>
-        <div className="w-full  lg:mt-0 overflow-hidden">
-          <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
-            <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
-              <img
-                src="../../../Images/fullvehicle.72e6f860c848885980de.png"
-                alt="Aarohan"
-                className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
-                data-aos="fade-right"
-              />
-            </div>
 
-            <div className="lg:w-[600px]  mt-10 lg:mt-0 lg:ml-24">
-              <h1
-                className="flex items-center text-4xl text-[#FF0000] font-extrabold"
-                data-aos="fade-right"
-              >
-                BAJA SAEINDIA
-              </h1>
-              <p
-                className="mt-5 md:text-lg  text-base text-white"
-                data-aos="fade-up-left"
-              >
-                BAJA SAEINDIA is a renowned national event that challenges
-                university students to design, build, and race off-road
-                vehicles, promoting teamwork, innovation, and engineering
-                skills. NIT Durgapur’s Team NDORS, made up of 25 talented
-                students, excelled in the competition, achieving 38th place
-                nationwide and ranking 7th among IITs and NITs, reflecting their
-                technical expertise and dedication.
-              </p>
-            </div>
-          </div>
+        <div className="w-full  lg:mt-0 overflow-hidden">
           <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row-reverse mx-10 my-28 lg:mx-36 lg:my-28 lg:justify-between">
             <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
               <img
@@ -84,6 +54,48 @@ function About() {
               </p>
             </div>
           </div>
+          <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
+            <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
+              {/* <img
+                src="../../../Images/fullvehicle.72e6f860c848885980de.png"
+               
+                alt="Aarohan"
+                className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
+                data-aos="fade-right"
+              /> */}
+
+              <video
+                className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
+                data-aos="fade-left"
+                loop
+                src="../../../Videos/BAJAVideo.mp4"
+                muted
+                autoPlay
+              />
+            </div>
+
+            <div className="lg:w-[600px]  mt-10 lg:mt-0 lg:ml-24">
+              <h1
+                className="flex items-center text-4xl text-[#FF0000] font-extrabold"
+                data-aos="fade-right"
+              >
+                BAJA SAEINDIA
+              </h1>
+              <p
+                className="mt-5 md:text-lg  text-base text-white"
+                data-aos="fade-up-left"
+              >
+                BAJA SAEINDIA is a renowned national event that challenges
+                university students to design, build, and race off-road
+                vehicles, promoting teamwork, innovation, and engineering
+                skills. NIT Durgapur’s Team NDORS, made up of 25 talented
+                students, excelled in the competition, achieving 38th place
+                nationwide and ranking 7th among IITs and NITs, reflecting their
+                technical expertise and dedication.
+              </p>
+            </div>
+          </div>
+
           <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
             <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
               <img
@@ -134,7 +146,6 @@ function About() {
                 src="../../../Videos/sdvvideo2.mp4"
                 muted
                 autoPlay
-                
               />
             </div>
 
@@ -163,8 +174,114 @@ function About() {
               </p>
             </div>
           </div>
+          <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
+            <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
+              <img
+                src="../../../Images/Screenshot-2024-08-22-095908.png"
+                alt="Aarohan"
+                className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
+                data-aos="fade-right"
+              />
+            </div>
+
+            <div className="lg:w-[600px]  mt-10 lg:mt-0 lg:ml-24">
+              <h1
+                className="flex items-center text-4xl text-[#FF0000] font-extrabold"
+                data-aos="fade-right"
+              >
+                Drag & Drift
+              </h1>
+              <p
+                className="mt-5 md:text-lg  text-base text-white"
+                data-aos="fade-up-left"
+              >
+                Aarohan, the second-largest techno-management fest in Eastern
+                India, is a beacon of innovation, creativity, and technology,
+                hosted by Team Aavishkar at NIT Durgapur for more than last 50
+                years. This vibrant festival is a melting pot of exhilarating
+                competitions, cutting-edge tech displays, and inspiring talks by
+                industry leaders.It’s where the brightest minds come together to
+                push the boundaries of creativity and engineering.Aarohan is
+                more than just a fest—it's a transformative journey where
+                hands-on learning fuels the next generation of technological
+                breakthroughs.
+              </p>
+            </div>
+          </div>
+          <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row-reverse mx-10 my-28 lg:mx-36 lg:my-28 lg:justify-between">
+            <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
+              <video
+                className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
+                data-aos="fade-left"
+                loop
+                src="../../../Videos/AIML_Workshop2.0.mp4"
+                muted
+                autoPlay
+              />
+            </div>
+
+            <div className="lg:w-[600px]  mt-10 lg:mt-0 ">
+              <h1
+                className="flex items-center text-4xl text-[#ff0000] font-extrabold"
+                data-aos="fade-left"
+              >
+                AI ML Workshop
+              </h1>
+              <p
+                className="mt-5 text-base md:text-lg md:mr-10 text-white "
+                data-aos="fade-up-right"
+              >
+                This workshop provides participants with practical, in-depth
+                experience in Artificial Intelligence (AI) and Machine Learning
+                (ML), focusing on Convolutional Neural Networks (CNNs) and deep
+                learning models. Attendees will tackle real-world challenges and
+                gain hands-on expertise by designing and implementing neural
+                network architectures. They’ll explore applications in image and
+                speech recognition, autonomous systems, and data-driven
+                decision-making, making it ideal for those seeking to deepen
+                their AI and ML knowledge with an emphasis on modern solutions
+                and industry standards.
+              </p>
+            </div>
+          </div>
+          <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
+            <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
+              <img
+                src="../../../Images/FIST.png"
+                alt="Aarohan"
+                className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
+                data-aos="fade-right"
+              />
+            </div>
+
+            <div className="lg:w-[600px]  mt-10 lg:mt-0 lg:ml-24">
+              <h1
+                className="flex items-center text-4xl text-[#FF0000] font-extrabold"
+                data-aos="fade-right"
+              >
+                F.I.S.T
+              </h1>
+              <p
+                className="mt-5 md:text-lg  text-base text-white"
+                data-aos="fade-up-left"
+              >
+                Team SAE-NITD’s "Forum for Ideas on Science and Technology"
+                (F.I.S.T.) is dedicated to cultivating a research-focused
+                environment through engaging webinars and hands-on workshops on
+                cutting-edge topics like generative AI. By bringing in industry
+                experts, F.I.S.T. bridges crucial knowledge gaps, inspires
+                innovation, and empowers students to explore and develop
+                technology-based solutions to real-world challenges, fostering a
+                spirit of inquiry and advancement.
+              </p>
+            </div>
+          </div>
         </div>
-       <div className='w-full '> <KnowMoreAbtSae/></div>
+
+        <div className="w-full ">
+          {" "}
+          <KnowMoreAbtSae />
+        </div>
       </div>
     </>
   );

@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="saeNav overflow-hidden">
+    <nav className="saeNav">
       <div className="nav-logo-container">
         <img
           src="https://i.ibb.co/fvZpdy8/SAE-Logo-White-3x.png"
@@ -31,7 +31,7 @@ const Navbar = () => {
       </div>
 
       <button
-        className="open-sidebar-button md:hidden"
+        className="open-sidebar-button"
         onClick={toggleSidebar}
         aria-label="Toggle menu"
       >
@@ -43,7 +43,7 @@ const Navbar = () => {
         className={`nav-links-container ${isSidebarOpen ? "open" : ""}`}
       >
         <button
-          className="close-sidebar-button md:hidden"
+          className="close-sidebar-button"
           onClick={toggleSidebar}
           aria-label="Close menu"
         >
@@ -51,7 +51,7 @@ const Navbar = () => {
         </button>
 
         <NavLink
-          to="/home"
+          to="/"
           className={({ isActive }) =>
             isActive ? "navlink active" : "navlink"
           }
@@ -69,7 +69,7 @@ const Navbar = () => {
           About SAE
         </NavLink>
         <NavLink
-          to="/register"
+          to="/googleAuth"
           className={({ isActive }) =>
             isActive ? "navlink active" : "navlink"
           }

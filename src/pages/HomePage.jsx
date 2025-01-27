@@ -1,42 +1,42 @@
 import React from "react";
 import ThreeDScene from "../components/ThreeDScene";
 import { Typewriter } from "react-simple-typewriter";
-// import { Navigate } from "react-router-dom";
+
 import "./HomePage.css";
-import Countdown from "../components/Countdown";
+import { useNavigate } from "react-router-dom";
 import CountdownTimer from "../components/CountdownTimer/CountdownTimer";
 import Timeline from "../components/TimeLine.jsx/TimeLine";
 import EntryDomains from "../components/EntryDomains/EntryDomains";
+// import Test from "../components/Test/Test";
+
 
 
 const HomePage = () => {
-  // const navigate = Navigate();
+ const navigate = useNavigate();
 
   return (
     <>
-      <div className="w-full overflow-hidden bg-black">
-        <div className="w-full h-screen flex flex-col lg:flex-row bg-black ">
+      <div className="w-full overflow-hidden  ">
+        <div className="w-full h-screen flex flex-col  lg:flex-row ">
           {/* Left Section */}
-          <div className="w-full lg:w-1/2 h-1/2 lg:h-screen bg-black text-white flex flex-col justify-center items-center p-6">
+          <div className="w-full lg:w-1/2 h-1/2 lg:h-screen  text-white flex flex-col justify-center  items-center p-6">
             <div className="content text-center lg:text-left flex items-center flex-col lg:flex-row">
               <div className="header mb-6">
-                <h1 className=" lg:text-5xl font-bold pb-2">
-                  Audition
-                </h1>
+                <h1 className=" lg:text-5xl font-bold pb-2">Audition</h1>
                 <p className="text-lg lg:text-xl mt-2">
                   Society of Automotive Engineers Collegiate Club of NIT
                   Durgapur
                 </p>
               </div>
-              <p className="text-md lg:text-lg">
+              <p className="text-md lg:text-lg my-3">
                 We are Here to{" "}
                 <span>
                   "
                   <Typewriter
-                    words={["Collaborate ", "Innovate ", "Invent "]}
+                    words={["Collaborate", "Innovate", "Learn"]}
                     loop={Infinity}
                     cursor
-                    cursorStyle="_"
+                    cursorStyle=""
                     typeSpeed={120}
                     deleteSpeed={80}
                     delaySpeed={1000}
@@ -44,13 +44,12 @@ const HomePage = () => {
                   "
                 </span>
               </p>
-              <div id="tenth" className="reg-buttonBox">
-                <button
-                  onClick={() => {
-                    navigate("/home");
-                  }}
-                  className=" homebtn  "
-                >
+              <div
+                id="tenth"
+                className="reg-buttonBox "
+                onClick={() => navigate("/register")}
+              >
+                <button className=" homebtn ">
                   <span>R</span>
                   <span>E</span>
                   <span>G</span>
@@ -66,20 +65,26 @@ const HomePage = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full lg:w-1/2 h-1/2 lg:h-screen">
-            <ThreeDScene />
+          <div className="w-full lg:w-1/2 h-1/2 lg:h-screen align-center flex items-center justify-center">
+            {/* <ThreeDScene /> */}
+            <img
+              className="w-[400px] h-[350px] lg:w-full lg:h-full object-center "
+              src="../../Images/pngwing.com (6).png"
+              alt=""
+            />
           </div>
         </div>
-        
-        <div className="w-full h-auto bg-black text-white flex flex-col items-center justify-center">
+
+        <div className="w-full h-auto  text-white flex flex-col items-center justify-center">
           <CountdownTimer />
         </div>
-        <div className="w-full h-auto bg-black text-white flex flex-col items-center justify-center">
+        <div className="w-full h-auto  text-white flex flex-col items-center justify-center">
           <EntryDomains />
         </div>
         <div>
           <Timeline />
         </div>
+        <div>{/* <Test/> */}</div>
       </div>
     </>
   );

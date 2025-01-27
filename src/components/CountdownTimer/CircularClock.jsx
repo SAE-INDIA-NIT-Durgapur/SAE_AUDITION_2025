@@ -32,7 +32,7 @@ const CircularClock = ({ value, label, maxValue }) => {
       -Math.PI / 2,
       -Math.PI / 2 + 2 * Math.PI * progress
     );
-    ctx.strokeStyle = "rgb(166,4,4)";
+    ctx.strokeStyle = "red";
     ctx.lineWidth = 10;
     ctx.stroke();
 
@@ -53,6 +53,25 @@ const CircularClock = ({ value, label, maxValue }) => {
       ctx.lineWidth = 2;
       ctx.stroke();
     }
+
+    // Draw needle
+    const needleAngle = (value / maxValue) * 2 * Math.PI - Math.PI / 2;
+    const needleLength = radius - 20;
+    const needleEndX = centerX + needleLength * Math.cos(needleAngle);
+    const needleEndY = centerY + needleLength * Math.sin(needleAngle);
+
+    ctx.beginPath();
+    ctx.moveTo(centerX, centerY);
+    ctx.lineTo(needleEndX, needleEndY);
+    ctx.strokeStyle = "rgb(166,4,4)";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // Draw center dot
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 4, 0, 2 * Math.PI);
+    ctx.fillStyle = "rgb(166,4,4)";
+    ctx.fill();
   }, [value, maxValue]);
 
   return (

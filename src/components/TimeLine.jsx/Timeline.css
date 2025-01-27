@@ -6,10 +6,10 @@
 
 
 :root {
-    --background-dark: rgb(166, 4, 4);
+    --background-dark: rgb(133, 6, 252);
     --text-light: rgba(255, 255, 255, 0.6);
-    --text-lighter: rgb(36, 33, 33);
-    --accent-color: rgb(166, 4, 4);
+    --text-lighter:  rgb(50, 50, 50);
+    --accent-color: rgb(133, 6, 252);
     --spacing-s: 16px;
     --spacing-m: 24px;
     --spacing-l: 32px;  
@@ -34,7 +34,7 @@
     content: '';
     position: absolute;
     width: 8px;
-background: linear-gradient(190deg, rgb(166, 4, 4) 0%, rgb(203, 102, 102)) !important;
+background: linear-gradient(190deg, rgb(133, 6, 252) 0%, rgb(133, 6, 252)) !important;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -127,13 +127,16 @@ background: linear-gradient(190deg, rgb(166, 4, 4) 0%, rgb(203, 102, 102)) !impo
     }
 
     .timeline-container.right {
-      left: 0%;
+      left: 10%;
     }
 
     .timeline-container.left, .timeline-container.right {
       left: 0;
     }
+
   }
+
+  
 
   .show {
     opacity: 1;
@@ -149,3 +152,67 @@ background: linear-gradient(190deg, rgb(166, 4, 4) 0%, rgb(203, 102, 102)) !impo
     height: 0;
     opacity: 0;
   }
+
+
+  .timeline-container.center {
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-top: var(--spacing-xxl);
+}
+
+.timeline-container.center::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 426px) {
+    .timeline-container {
+      padding-left: 40px;
+      padding-right: 20px;
+      /* width: 100%; */
+    }
+
+    .timeline-container::before {
+      left: 31px;
+    }
+
+    .timeline-container.center::before {
+  left: 31px;
+  transform: translateX(-50%);
+   }
+    
+  }
+
+
+.welcome-card {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--background-dark);
+  background-color: var(--text-lighter);
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  /* line-height: 200px; */
+  align-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.timeline.show-line::after {
+  height: calc(100% - 333px); /* Adjust for the circular card */
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+  

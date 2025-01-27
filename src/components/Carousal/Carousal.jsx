@@ -10,6 +10,11 @@ const Carousal = () => {
     },
     {
       type: "image",
+      src: "../../../Images/DSC_0125.JPG",
+      caption: "BAJA",
+    },
+    {
+      type: "image",
       src: "../../../Images/TEDxAudition.jpg",
       caption: "TEDx",
     },

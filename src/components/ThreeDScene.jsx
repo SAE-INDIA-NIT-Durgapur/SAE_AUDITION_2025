@@ -6,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 // import * as THREE from "three";
 
 function Model(props) {
-  const { scene } = useGLTF("/models2/scene.gltf");
+  const { scene } = useGLTF("/static/models2/scene.gltf");
 
   scene.position.set(0, 0, 0);
   useFrame(() => {

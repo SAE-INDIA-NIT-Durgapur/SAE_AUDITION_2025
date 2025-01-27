@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CircularClock from "./CircularClock";
+// import "./CountdownTimer.css";
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
@@ -10,9 +11,11 @@ const CountdownTimer = () => {
     if (difference > 0) {
       return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor(((difference / 1000) * 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        hours: Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        ),
+        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((difference % (1000 * 60)) / 1000),
       };
     }
 
@@ -32,12 +35,14 @@ const CountdownTimer = () => {
   return (
     <div
       id="timer_container"
-      className="flex flex-col justify-center items-center  bg-black"
+      className="flex flex-col justify-center items-center "
     >
       <div>
-        <h1 className="text-6xl text-[rgb(166,4,4)]">Audition Starts in</h1>
+        <h1 className="font-medium text-3xl md:text-6xl text-[red]">
+          Audition Starts in
+        </h1>
       </div>
-      <div className="flex space-x-8 mb-20">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-8  mt-6 mb-20">
         <CircularClock value={timeLeft.days} label="Days" maxValue={365} />
         <CircularClock value={timeLeft.hours} label="Hours" maxValue={24} />
         <CircularClock value={timeLeft.minutes} label="Minutes" maxValue={60} />

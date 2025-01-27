@@ -64,14 +64,14 @@
     align-items: flex-start;
     position: fixed;
     top: 0;
-    right: -300px;
+    right: -250px;
     z-index: 11;
-    width: 300px;
+    width: 250px;
     height: 100vh;
     background-color: var(--nav-color-1);
-    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     transition: 0.3s ease-out;
-    padding-top: 40px; /* Reduced from 60px to 40px */
+    padding-top: 60px;
   }
 
   .nav-links-container.open {
@@ -80,19 +80,28 @@
 
   .saeNav a {
     width: 100%;
-    padding: 10px 30px; /* Reduced from 20px to 10px */
+    padding: 12px 20px;
     justify-content: flex-start;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    height: 10vh;
+  }
+
+  .saeNav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .saeNav a.active {
+    border-bottom: none;
+    background-color: rgba(166, 4, 4, 0.2);
   }
 
   .saeNav a + a {
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Add a subtle separator */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .open-sidebar-button {
     display: block;
-    position: absolute;
-    right: 20px;
-    top: 15px;
   }
 
   .close-sidebar-button {
@@ -100,6 +109,55 @@
     position: absolute;
     top: 15px;
     right: 20px;
+    color: var(--text-color);
+  }
+
+  .nav-links-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links-container {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    padding-top: 0;
+  }
+
+  .saeNav a {
+    padding: 0 15px;
+    font-size: 16px;
+  
+  }
+
+  .saeNav a + a {
+    border-top: none;
+  }
+
+  .saeNav a:hover,
+  .saeNav a.active {
+    background-color: transparent;
+  }
+
+  .saeNav a.active {
+    border-bottom: 2px solid var(--nav-accent-color);
+    
+  }
+
+  .open-sidebar-button,
+  .close-sidebar-button {
+    display: none;
   }
 }
 

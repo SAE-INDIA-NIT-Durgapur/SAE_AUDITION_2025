@@ -7,8 +7,10 @@
 } */
 
 .domain-container {
-  background-color: black;
-  color:rgb(166, 4, 4);
+  /* background-color: rgb(50, 50, 50); */
+  /* color:rgb(250, 27, 27); */
+  /* color: rgb(250, 6, 250); */
+  color: rgb(133, 6, 252);
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
@@ -53,7 +55,7 @@ h1 {
 
 .domain-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
 }
 
 .domain-icon {

@@ -6,12 +6,12 @@ import { faUser, faIdBadge, faPhone, faBuilding } from "@fortawesome/free-solid-
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../context/UserContext";
 import "./RegisterPage.css";
-
+import LoadingOverlay from "../components/Loading/LoadingOverlay";
 const RegisterPage = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const { user } = useContext(UserDataContext);
   const EmailFromLS = localStorage.getItem("email");
-
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
@@ -20,6 +20,7 @@ const RegisterPage = () => {
     phone: "",
     department: "",
     gender: "",
+    year: "",
     domain: [],
     questions_answers: {},
     questions_answers2: {},
@@ -41,13 +42,25 @@ const RegisterPage = () => {
     { value: "Male", label: "Male" },
     { value: "Female", label: "Female" },
   ];
-
-  const domainOptions = [
-    { value: "Event Management ,", label: "Event Management" },
-    { value: "Automobiles & Robotics ,", label: "Automobiles & Robotics" },
-    { value: "Web Development ,", label: "Web Development" },
-    { value: "GFX & VFX & Photography ,", label: "GFX & VFX & Photography" },
+  const yearOptions = [
+    { value: "First", label: "1st Year" },
+    { value: "Second", label: "2nd Year" },
   ];
+
+  const domainOptionsByYear = {
+    First: [
+      { value: "Automobiles ,", label: "Automobiles" },
+      { value: "Robotics/ML ,", label: "Robotics/ML" },
+      { value: "Event Management ,", label: "Event Management" },
+      { value: "Web Development ,", label: "Web Development" },
+      { value: "GFX & VFX & Photography ,", label: "GFX & VFX & Photography" },
+    ],
+    Second: [
+      { value: "Automobiles ,", label: "Automobiles" },
+      { value: "Robotics/ML ,", label: "Robotics/ML" },
+      { value: "Event Management ,", label: "Event Management" },
+    ],
+  };
 
   const validateStep1 = () => {
     const newErrors = {};
@@ -59,6 +72,7 @@ const RegisterPage = () => {
     }
     if (!formData.department) newErrors.department = "Department is required.";
     if (!formData.gender) newErrors.gender = "Gender selection is required.";
+    if (!formData.year) newErrors.year = "Year selection is required.";
     if (!formData.domain.length)
       newErrors.domain = "At least one domain is required.";
     return newErrors;
@@ -91,7 +105,16 @@ const RegisterPage = () => {
       gender: selectedOption ? selectedOption.value : "",
     }));
   };
-
+  const handleYearChange = (selectedOption) => {
+    setFormData((prev) => ({
+      ...prev,
+      year: selectedOption ? selectedOption.value : "",
+      domain: [], // Reset domain selection when year changes
+    }));
+  };
+  const getDomainOptions = () => {
+    return formData.year ? domainOptionsByYear[formData.year] : [];
+  };
   const handleDomainChange = (selectedOptions) => {
     const selectedValues = selectedOptions.map((option) => option.value);
     setFormData((prev) => ({ ...prev, domain: selectedValues }));
@@ -101,7 +124,9 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
     setSuccessMessage("");
+    const { email } = formData;
 
     try {
       const response = await axios.post(
@@ -114,7 +139,7 @@ const RegisterPage = () => {
         }
       );
       const scriptURL =
-      "https://script.google.com/macros/s/AKfycbw4Gn4d1lKnlvTTI93oawElK30_f6QExVVYnGCHDhuoxu2s_PgQZnzXqGfDanN5itM/exec"; // Your Google 
+      "https://script.google.com/macros/s/AKfycbzSGpZ8QTbNbvuaJSLlswudJ3L-LhiuIa-HzQRtKQV2KhuKr9bVYb8jUciInmqBwI-7/exec"; // Your Google 
       const sheetId = "1itBcM8lQNnY4Do0NUlFV6EA3x9UbwH0OcSpcTB7zxRQ";
       try {
         const response = await fetch(scriptURL, {
@@ -134,7 +159,21 @@ const RegisterPage = () => {
       } catch (error) {
         console.error('Error submitting form:', error);
         alert('There was an error submitting the form.');
+      } finally {
+        setLoading(false); // Hide loading overlay
       }
+      try {
+            await fetch("http://localhost:8000/send-email-to-user/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
+        });
+  
+    } catch (error) {
+        console.error("Error sending email:", error);
+    }
       if (response.status === 201) {
         setFormData({
           name: "",
@@ -142,6 +181,7 @@ const RegisterPage = () => {
           roll: "",
           phone: "",
           gender: "",
+          year: "",
           department: "",
           domain: [],
           questions_answers: {},
@@ -156,7 +196,10 @@ const RegisterPage = () => {
       } else {
         setError("An error occurred. Please try again.");
       }
+    }finally {
+      setLoading(false); // Hide loading overlay
     }
+
   };
 
   switch (step) {
@@ -166,11 +209,7 @@ const RegisterPage = () => {
           <div className="fcontainer">
             <div className="formcontainer">
               <form>
-                <img
-                  src="https://swarajjaiswal.github.io/saeevents/logo.png"
-                  alt=""
-                  id="logo"
-                />
+                <h1 style={{color:"#fff"}}> <span style={{color:"red"}}> Audition</span> Form</h1>
                 <div style={{ position: "relative" }} className="userinput">
                   <FontAwesomeIcon
                     icon={faUser}
@@ -262,11 +301,17 @@ const RegisterPage = () => {
                   placeholder="Select Gender"
                 />
                 <Select
+                  className="yearoption"
+                  options={yearOptions}
+                  onChange={handleYearChange}
+                  placeholder="Select Year"
+                />
+                 <Select
                   className="domainoption"
-                  options={domainOptions}
+                  options={getDomainOptions()}
                   isMulti
                   onChange={handleDomainChange}
-                  value={domainOptions.filter((option) =>
+                  value={getDomainOptions().filter((option) =>
                     formData.domain.includes(option.value)
                   )}
                   placeholder="Select Domains"
@@ -370,10 +415,11 @@ const RegisterPage = () => {
     case 4:
       return (
         <div className="formreview">
+          {loading && <LoadingOverlay/>} {/* Show overlay if loading */}
           <form className="finalview">
             <div className="details">
 
-              <h2><span style={{ textTransform: "uppercase", color: "#aa14f5" }}>Final Step </span>: Review Details</h2>
+              <h2><span style={{ textTransform: "uppercase", color: "red" }}>Final Step </span>: Review Details</h2>
               <p>
                 <strong>Name  :  </strong> {formData.name}
               </p>
@@ -388,6 +434,9 @@ const RegisterPage = () => {
               </p>
               <p>
                 <strong>Department  :  </strong> {formData.department}
+              </p>
+              <p>
+                <strong>Year  :  </strong> {formData.year}
               </p>
               <p>
                 <strong>Domain  :  </strong> {formData.domain}

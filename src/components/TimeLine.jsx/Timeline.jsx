@@ -43,59 +43,41 @@ const Timeline = () => {
   }, []);
 
   return (
-    <div className="bg-black w-full h-auto font-serif audition-flow-container">
-      <h1 className=" font-medium text-3xl md:text-6xl   bg-clip-text text-[rgb(166,4,4)] text-center mb-7">
+    <div className="w-full h-auto font-serif audition-flow-container">
+      <h1 className="font-medium text-3xl md:text-6xl bg-clip-text text-[red] text-center mb-7">
         Audition Flow
       </h1>
-      <div className="timeline hide-line bg-black">
+      <div className="timeline hide-line">
         <div className="timeline-container left">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">
-              {/* <span className="icon">
-                <i className="fas fa-map-marked-alt"></i>
-              </span>{""} */}
-              Simple Aptitute test
-            </div>
+            <div className="timeLineContent">Pen Paper Test</div>
           </div>
         </div>
         <div className="timeline-container right">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">
-              {/* <span className="icon">
-                <i className="fas fa-filter"></i>
-              </span>{" "} */}
-              Task Review 1
-            </div>
+            <div className="timeLineContent">Task Review 1</div>
           </div>
         </div>
         <div className="timeline-container left">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">
-              {/* <span className="icon">
-                <i className="fas fa-user"></i>
-              </span>{" "} */}
-              Task Review 2
-            </div>
+            <div className="timeLineContent">Task Review 2</div>
           </div>
         </div>
         <div className="timeline-container right">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">
-              {/* <span className="icon">
-                <i className="fas fa-phone-alt"></i>
-              </span>{" "} */}
-              Group Discussion
-            </div>
+            <div className="timeLineContent">Group Discussion</div>
           </div>
         </div>
-
         <div className="timeline-container left">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">
-              {/* <span className="icon">
-                <i className="fas fa-heart"></i>
-              </span>{" "} */}
-              Final Interview
+            <div className="timeLineContent">Final Interview</div>
+          </div>
+        </div>
+        {/* Welcome to the Club card */}
+        <div className="timeline-container center">
+          <div className="timelinecontent-link">
+            <div className="timeLineContent welcome-card">
+              WELCOME TO THE CLUB
             </div>
           </div>
         </div>

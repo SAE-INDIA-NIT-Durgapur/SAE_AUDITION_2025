@@ -26,7 +26,7 @@ const handleGoogleLogin = (credentialResponse) => {
   } catch (error) {
     console.error("Error decoding Google token:", error);
   }
-    navigate("/home");
+    navigate("/register");
 
 };
 
@@ -34,19 +34,10 @@ const handleGoogleLogin = (credentialResponse) => {
     <div className="gcontain">
       <img id="gif" src={ai} alt="A cool GIF" />
       <div className="gcontent">
-        
-        <div className="l">
-          <a>
-            <img
-              src="https://swarajjaiswal.github.io/saeevents/logo.png"
-              alt="Logo"
-              className="logo transformed-logo"
-            />
-          </a>
-        </div>
+
         <div className="g-auth">
           <h1>
-            Please <span style={{ color: "#05e641" }}>Sign</span>-in
+            <span style={{ color: "#05e641" }}>sign</span>-in to continue
           </h1>
           <div className="google-login" style={{ width: "20%" }}>
             <GoogleLogin

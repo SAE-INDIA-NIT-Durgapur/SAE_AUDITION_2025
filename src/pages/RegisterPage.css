@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     /* background-color: ; */
-    background: url("../assets/Sonu/bg.webp");
+    /* background: url("../assets/Sonu/bg.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     flex-direction: column;
@@ -18,6 +18,10 @@
   height: 130vh;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  /* background: url("../../public/GIF/gif2.gif");
+  background-repeat: no-repeat;
+  background-size: cover; */
 
 }
 .fimg{
@@ -38,7 +42,7 @@
   width: 50%;
   background:transparent;
   overflow: hidden;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
   padding: 10px;
   height: 115vh;
   display: flex;
@@ -58,7 +62,7 @@
     border-radius: 4px;
     font-weight: 600;
     width: 40%;
-    background: linear-gradient(90deg, #45f3ff, #ff2770);
+    background: linear-gradient(90deg, #e40404, #f21e1e);
     color: #fff;
     margin-top: 20px;
     transition: opacity 0.3s;
@@ -118,10 +122,13 @@
   width: 100%;
   row-gap: 4vh;
   /* margin-bottom: 15vh; */
-
+  h1{
+    margin: 0;
+    text-transform: uppercase;
+  }
   span{
     text-transform: uppercase;
-    font-size: 2rem;
+    /* font-size: 2rem; */
     font-weight: bolder;
   }
 
@@ -138,19 +145,27 @@
 
 
 .genderoption {
-    width: 50%;
+    width: 32%;
     border-radius: 4px;
     background: transparent;
     border: 2px solid #8f8f8f;
     color: black;
-    z-index: 10;
+    z-index: 3;
+}
+.yearoption {
+    width: 32%;
+    border-radius: 4px;
+    background: transparent;
+    border: 2px solid #8f8f8f;
+    color: black;
+    z-index: 2;
 }
 
 .genderoption:focus {
     border: 2px solid #fff;
 }
 .domainoption {
-    width: 50%;
+    width: 32%;
     border-radius: 4px;
     background: transparent;
     border: 2px solid #8f8f8f;
@@ -173,11 +188,11 @@
 
 .qcontainer {
   width: 72%;
-  height: 70%;
-  background-color: #FFFFFF;
+  height: 85%;
+  /* background-color: #FFFFFF; */
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
   box-shadow: 2px 2px 30px rgba(66, 57, 238, .2);
   border-radius: 20px;
@@ -185,14 +200,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('../../public/Images/question-block.avif');
+  /* background-image: url('../assets/Sonu/qbg.avif'); */
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 20px;
 }
 .qmain{
-  background: url('../../public/Images/question-bg.jpg');
+  /* background-color: black; */
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
@@ -252,7 +268,7 @@
       h1{
         font-family: Calibri, sans-serif;
         color: rgba(30, 30, 30, 1);
-        font-size: 1.5rem;
+        font-size: 2vw;
         text-align: center;
         color: white;
       }
@@ -291,7 +307,7 @@
     border-radius: 4px;
     font-weight: 600;
     width: 40%;
-    background: linear-gradient(90deg, #45f3ff, #ff2770);
+    background: linear-gradient(90deg, #f10909, #ff2770);
     color: #fff;
     margin-top: 20px;
     transition: opacity 0.3s;
@@ -317,8 +333,8 @@
         font-size: 0.9em;
         border-radius: 4px;
         font-weight: 600;
-        width: 40%;
-        background: linear-gradient(90deg, #022185, #3d0086);
+        width: 20%;
+        background: linear-gradient(90deg, #6c0202, #6b0101, rgb(185, 5, 5));
         color: #fff;
         margin-top: 20px;
         transition: opacity 0.3s;
@@ -327,7 +343,6 @@
         button:hover {
         opacity: 0.8;
         }
-        
         button:active {
         transform: scale(0.98);
         }
@@ -340,11 +355,10 @@
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-    background: url("../../public/GIF/giphy3.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
     color: white;
     background-position: center;
+    /* background-color: black; */
+    /* background: url('../assets/Sonu/fbg.jpg') no-repeat center center/cover; */
   }
   .finalview{
     display: flex;
@@ -353,7 +367,7 @@
     align-items: center;
     height: 90%;
     width: 60%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
   border-radius: 20px;
   }
   .details{
@@ -364,6 +378,9 @@
     width: 80%;
     height: 80%;
     font-size: 1.3rem;
+    /* background: url("../../public/GIF/giphy3.gif"); */
+    background-repeat: no-repeat;
+    background-size: cover;
   
     h2{
       width: 100%;
@@ -372,7 +389,7 @@
       font-weight: bolder;
     }
     strong{
-      color: #aa14f5;
+      color: red;
     }
   
   }
@@ -432,13 +449,13 @@
     width: 100vw;
     height: 125vh;
     align-items: center;
-    background: black;
+    /* background: black; */
     display: flex;
     flex-direction: column;
     row-gap: 2vh;
   }
   .formcontainer{
-    background: url("../assets/Sonu/bg.webp");
+    /* background: url("../assets/Sonu/bg.jpg"); */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -452,11 +469,19 @@
   #logo{
     width: 60%;
   }
+  .formcontainer form{
+    h1{
+      font-size: 8vw;
+    }
+  }
 
   .formcontainer input{
     width: 80%;
   }
   .domainoption{
+    width: 80%;
+  }
+  .yearoption{
     width: 80%;
   }
   .genderoption{

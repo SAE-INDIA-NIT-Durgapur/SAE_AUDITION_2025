@@ -1,3 +1,7 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900&family=Poppins:wght@500&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');  */
+/* @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900&family=Poppins:wght@500&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond+Roboto+Anton:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap'); 
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900&family=Poppins:wght@500&display=swap");
 .content{
     display: flex;
@@ -7,14 +11,18 @@
     justify-content: center;
     color: white;
     z-index: 2;
+    margin-top: 10%;
+    /* font-family: "Cormorant Garamond", serif; */
 
     p{
         font-size: 2vw;
+        /* padding: 10px; */
         span{
             font-size: 3vw;
             text-transform: uppercase;
-            color: rgb(166, 4, 4);
+            color: red;
             font-weight: bold;
+            font-family: "Merriweather", serif;
         }
     }
     .header{
@@ -23,26 +31,26 @@
         width: 100%;
         h1{
             text-transform: uppercase;
-            font-size: 8vw;
+            font-family: "Merriweather",serif;
+            font-size: 8.5vw;
             margin: 0;
             z-index: 2;
-            color: rgb(166, 4, 4);
             font-weight: bolder;
-            /* background: url('../Resources/hbg.jpg'); */
-            /* background-size: contain; */
-            /* background-repeat: no-repeat; */
-            background-clip: text;
+            /* background: url('../assets/Sonu/text.avif') no-repeat center;
+            background-size: cover;
             -webkit-background-clip: text;
-            /* color: transparent; */
-            -webkit-text-stroke: 1px rgb(166, 4, 4);
-            animation: slide-bg 10s infinite linear; /* Sliding effect for the background */
+            background-clip: text;
+            -webkit-text-stroke:0.5px white;
+            -webkit-text-fill-color: transparent; */
+            color: red;
             letter-spacing: 5px;
         }
         p{
             margin: 0;
             /* color: white; */
             z-index: 2;
-             font-size: 2vw;
+             font-size: 1.4vw;
+             font-family: "Merriweather",serif;
         }
     }
     
@@ -66,7 +74,7 @@
 
 @media  screen and (max-width:426px){
     .content{
-        margin: 0;
+        margin-top: 20%;
         align-items: center;
         p{
             font-size: 5vw;
@@ -97,7 +105,7 @@
 }
 
 .reg-buttonBox{
-  margin: 20px 20px 20px;
+  margin: 55px 20px;
   position:relative;
   max-width: 60%;
   min-width: 40%;
@@ -106,10 +114,11 @@
   /* flex: 20%; */
 }
 
-@media  screen and (max-width:376px) {
+@media  screen and (max-width:769px) {
   .reg-buttonBox{
     /* background-color: aquamarine; */
     min-width: 50%;
+    margin-top: 25px ;
   }
 }
 
@@ -120,7 +129,7 @@
   height:70px;
   border-radius: 1.5rem;
   position:relative;
-  background:rgba(166, 4, 4, 1);
+  background:red;
   text-transform:uppercase;
   color:white;
   font-weight:700;
