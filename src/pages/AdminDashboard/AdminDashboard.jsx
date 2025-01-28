@@ -19,7 +19,7 @@ const AdminDashboard = () => {
         }
     };
     const handledelete = async (id) => {
-        await axios.delete(`https://web-production-a1bf.up.railway.app/${id}/`); // Send DELETE request to backend
+        await axios.delete(`https://web-production-a1bf.up.railway.app/api/delete/${id}/`); // Send DELETE request to backend
         // Update UI by removing deleted item
         fetchData();
 

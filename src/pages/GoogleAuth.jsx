@@ -21,12 +21,13 @@ const handleGoogleLogin = (credentialResponse) => {
     setUser({email: decoded.email });
     localStorage.setItem("email", decoded.email);
     setIsGoogleAuth(true);
+    navigate("/register");
     
     // console.log("Google User:", decoded);
   } catch (error) {
     console.error("Error decoding Google token:", error);
   }
-  navigate("/register");
+  
 
 };
 
