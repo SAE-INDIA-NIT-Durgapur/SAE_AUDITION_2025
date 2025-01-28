@@ -75,6 +75,7 @@ function App() {
           path="/formSubmitted"
           element={
             <MainLayout>
+              <Background/>
               <Formsubmitted />
             </MainLayout>
           }

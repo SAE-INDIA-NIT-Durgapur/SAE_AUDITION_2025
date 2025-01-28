@@ -50,29 +50,31 @@ const Timeline = () => {
       <div className="timeline hide-line">
         <div className="timeline-container left">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">Pen Paper Test</div>
+            <div className="timeLineContent">Pen-Paper Round & Introduction</div>
           </div>
         </div>
         <div className="timeline-container right">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">Task Review 1</div>
+            <div className="timeLineContent">Task Review & Problem Solving</div>
           </div>
         </div>
         <div className="timeline-container left">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">Task Review 2</div>
+            <div className="timeLineContent">
+              Event Design & Team Collaboration
+            </div>
           </div>
         </div>
         <div className="timeline-container right">
           <div className="timelinecontent-link">
-            <div className="timeLineContent">Group Discussion</div>
+            <div className="timeLineContent">Final Interview</div>
           </div>
         </div>
-        <div className="timeline-container left">
+        {/* <div className="timeline-container left">
           <div className="timelinecontent-link">
             <div className="timeLineContent">Final Interview</div>
           </div>
-        </div>
+        </div> */}
         {/* Welcome to the Club card */}
         <div className="timeline-container center">
           <div className="timelinecontent-link">

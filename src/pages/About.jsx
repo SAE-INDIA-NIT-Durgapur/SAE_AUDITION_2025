@@ -22,7 +22,7 @@ function About() {
           <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row-reverse mx-10 my-28 lg:mx-36 lg:my-28 lg:justify-between">
             <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
               <img
-                src="/Images/6617e9667ea53b0c8bd3b345.jpg" //
+                src="/Images/AarohanforAudition.jpg" //
                 alt="Image"
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-left"
@@ -48,7 +48,7 @@ function About() {
                 ensuring a well-rounded and dynamic experience for all
                 participants. Each SAE event, from Flying UAV to Roboliga, Car
                 Auction, and Workshop, is designed to captivate and challenge
-                participants.. These events and workshBy seamlessly managing
+                participants.. These events works by seamlessly managing
                 these diverse responsibilities, SAE significantly amplified the
                 impact and success of Aarohan.
               </p>
@@ -117,16 +117,7 @@ function About() {
                 className="mt-5 md:text-lg  text-base text-white"
                 data-aos="fade-up-left"
               >
-                Aarohan, the second-largest techno-management fest in Eastern
-                India, is a beacon of innovation, creativity, and technology,
-                hosted by Team Aavishkar at NIT Durgapur for more than last 50
-                years. This vibrant festival is a melting pot of exhilarating
-                competitions, cutting-edge tech displays, and inspiring talks by
-                industry leaders.It’s where the brightest minds come together to
-                push the boundaries of creativity and engineering.Aarohan is
-                more than just a fest—it's a transformative journey where
-                hands-on learning fuels the next generation of technological
-                breakthroughs.
+              SAE proudly organizes TEDxNITDurgapur as part of the global TED initiative. This significant grassroots effort aims to establish a dynamic platform that unites diverse voices from various fields, fostering the exchange of innovative ideas and perspectives. By bringing together thought leaders, creators, and visionaries, TEDxNITDurgapur aspires to inspire change, spark conversations, and contribute meaningfully to the global dialogue on cutting-edge topics and transformative ideas.
               </p>
             </div>
           </div>
@@ -160,24 +151,23 @@ function About() {
                 className="mt-5 text-base md:text-lg md:mr-10 text-white "
                 data-aos="fade-up-right"
               >
-                The SAE India Collegiate Club of NIT Durgapur was a driving
-                force behind the success of Aarohan. Their efforts were crucial
-                in securing essential sponsorships, organizing stage and
-                bringing in speakers for event. SAE organized a wide array of
-                events, from technical challenges to engaging workshops,
-                ensuring a well-rounded and dynamic experience for all
-                participants. Each SAE event, from Flying UAV to Roboliga, Car
-                Auction, and Workshop, is designed to captivate and challenge
-                participants.. These events and workshBy seamlessly managing
-                these diverse responsibilities, SAE significantly amplified the
-                impact and success of Aarohan.
+                SAE’s self-driving vehicle workshop offers an in-depth
+                experience in building a prototype autonomous vehicle, ideal for
+                tech enthusiasts and aspiring engineers. As autonomous vehicles
+                become central to the future of transportation, this workshop
+                covers key principles of autonomous driving, robotics, and
+                algorithm development. Through hands-on sessions and expert-led
+                guidance, participants will engage with the cutting-edge
+                technologies propelling the evolution of self-driving systems,
+                gaining valuable insights into the innovations shaping
+                tomorrow’s mobility landscape.
               </p>
             </div>
           </div>
           <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
             <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
               <img
-                src="../../../Images/Screenshot-2024-08-22-095908.png"
+                src="../../../Images/dnd5.jpg"
                 alt="Aarohan"
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-right"
@@ -195,16 +185,7 @@ function About() {
                 className="mt-5 md:text-lg  text-base text-white"
                 data-aos="fade-up-left"
               >
-                Aarohan, the second-largest techno-management fest in Eastern
-                India, is a beacon of innovation, creativity, and technology,
-                hosted by Team Aavishkar at NIT Durgapur for more than last 50
-                years. This vibrant festival is a melting pot of exhilarating
-                competitions, cutting-edge tech displays, and inspiring talks by
-                industry leaders.It’s where the brightest minds come together to
-                push the boundaries of creativity and engineering.Aarohan is
-                more than just a fest—it's a transformative journey where
-                hands-on learning fuels the next generation of technological
-                breakthroughs.
+                SAE presents an electrifying event 'Drag & Drift' where participants navigate intricate maze designs filled with challenging obstacles. This event not only tests your ability to skillfully dodge these pesky barriers but also deepens your understanding of the car's underlying mechanics.
               </p>
             </div>
           </div>

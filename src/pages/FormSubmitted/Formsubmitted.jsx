@@ -7,19 +7,19 @@ const navigate = useNavigate();
   return (
     <div className="container">
       <div className="subcontainer">
-        {/* <h1 style={{ fontSize: "5vw" }}>
-          Society of Automotive Engineer's-NITD
-        </h1> */}
-        <h1 style={{ color: "#fff" }}>
-          {" "}
-          <span
-            style={{ color: "#0af03f", fontSize: "5vw", fontWeight: "bolder" }}
-          >
+        <div className="submithead">
+
+          <h1 style={{ color: "#fff" }}>
             {" "}
-            Congrats !{" "}
-          </span>
-          Your data has been Submitted.
-        </h1>
+            <span style={{ color: "red" }}>
+              {" "}
+              Congratulations !{" "}
+            </span>
+            
+          </h1>
+          <h2>You have been registered successfully.</h2>
+        </div>
+
         <a onClick={()=>{
           navigate('/')
         }} target="_blank">

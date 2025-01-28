@@ -2,14 +2,14 @@
   background: lightblue;
   font-family: 'Poppins', sans-serif;
 }   */
-   @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900&family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900&family=Poppins:wght@500&display=swap");
 
 
 :root {
-    --background-dark: rgb(133, 6, 252);
+    --background-dark: white;
     --text-light: rgba(255, 255, 255, 0.6);
     --text-lighter:  rgb(50, 50, 50);
-    --accent-color: rgb(133, 6, 252);
+    --accent-color: red;
     --spacing-s: 16px;
     --spacing-m: 24px;
     --spacing-l: 32px;  
@@ -34,7 +34,7 @@
     content: '';
     position: absolute;
     width: 8px;
-background: linear-gradient(190deg, rgb(133, 6, 252) 0%, rgb(133, 6, 252)) !important;
+background: linear-gradient(190deg, red 0%, red) !important;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -110,32 +110,7 @@ background: linear-gradient(190deg, rgb(133, 6, 252) 0%, rgb(133, 6, 252)) !impo
     display: block;
   }
 
-  @media screen and (max-width: 600px) {
-    .timeline::after {
-      left: 31px;
-    }
-
-    .timeline-container {
-      width: 100%;
-      padding-left: 80px;
-      padding-right: 40px;
-      margin-bottom: var(--spacing-l);
-    }
-
-    .timeline-container.left::before, .timeline-container.right::before {
-      left: 31px;
-    }
-
-    .timeline-container.right {
-      left: 10%;
-    }
-
-    .timeline-container.left, .timeline-container.right {
-      left: 0;
-    }
-
-  }
-
+  
   
 
   .show {
@@ -167,23 +142,10 @@ background: linear-gradient(190deg, rgb(133, 6, 252) 0%, rgb(133, 6, 252)) !impo
   transform: translateX(-50%);
 }
 
-@media screen and (max-width: 426px) {
-    .timeline-container {
-      padding-left: 40px;
-      padding-right: 20px;
-      /* width: 100%; */
-    }
 
-    .timeline-container::before {
-      left: 31px;
-    }
 
-    .timeline-container.center::before {
-  left: 31px;
-  transform: translateX(-50%);
-   }
-    
-  }
+
+
 
 
 .welcome-card {
@@ -215,4 +177,52 @@ background: linear-gradient(190deg, rgb(133, 6, 252) 0%, rgb(133, 6, 252)) !impo
   }
 }
 
-  
+@media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 31px;
+    }
+
+    .timeline-container {
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 40px;
+      margin-bottom: var(--spacing-l);
+    }
+
+    .timeline-container.left::before, .timeline-container.right::before {
+      left: 31px;
+    }
+
+    .timeline-container.right {
+      left: 10%;
+    }
+
+    .timeline-container.left, .timeline-container.right {
+      left: 0;
+    }
+
+    .timeline.show-line::after {
+  height: calc(100% - 366px); /* Adjust for the circular card */
+  opacity: 1;
+   }
+
+  }
+
+  @media screen and (max-width: 426px) {
+    .timeline-container {
+      padding-left: 40px;
+      padding-right: 20px;
+      /* width: 100%; */
+    }
+
+    .timeline-container::before {
+      left: 31px;
+    }
+
+    .timeline-container.center::before {
+  left: 31px;
+  transform: translateX(-50%);
+   }
+    
+   
+  }

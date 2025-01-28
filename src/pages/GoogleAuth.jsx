@@ -38,7 +38,7 @@ const handleGoogleLogin = (credentialResponse) => {
 
         <div className="g-auth">
           <h1>
-            <span style={{ color: "#05e641" }}>sign</span>-in to continue
+            <span style={{ color: "red" }}>sign-in </span>to continue
           </h1>
           <div className="google-login" style={{ width: "20%" }}>
             <GoogleLogin

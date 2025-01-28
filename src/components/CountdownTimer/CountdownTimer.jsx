@@ -4,7 +4,7 @@ import CircularClock from "./CircularClock";
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("2025-02-07T00:00:00").getTime();
+    const targetDate = new Date("2025-02-04T00:00:00").getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 

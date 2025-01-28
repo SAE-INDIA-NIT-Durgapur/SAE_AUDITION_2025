@@ -14,7 +14,7 @@ import "./EntryDomains.css";
 const EntryDomains = () => {
   return (
     <div className="domain-container ">
-      <h1 className="font-medium text-3xl md:text-6xl">Domains</h1>
+      <h1 className="font-medium text-3xl md:text-6xl text-[red]">Domains</h1>
       <div className="domain-cards">
         <div className="domain-card">
           <div className="domain-icon">
@@ -28,7 +28,7 @@ const EntryDomains = () => {
         <div className="domain-card ">
           <div className="domain-icon">
             <FontAwesomeIcon className="FontAwesomeIcon" icon={faRobot} />
-            <p className="title">Robotics</p>
+            <p className="title">Robotics/ML</p>
           </div>
           {/* <div className="count" id="default-selected">
             open positions

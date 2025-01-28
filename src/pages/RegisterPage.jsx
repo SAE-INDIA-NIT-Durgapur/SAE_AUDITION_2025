@@ -31,14 +31,24 @@ const RegisterPage = () => {
   const [error, setError] = useState("");
 
   const questions = [
-    "What motivates you to join this domain?",
-    "Describe a challenging situation and how you overcame it.",
-  ];
-  const questions2 = [
-    "Describe a challenging situation and how you overcame it.",
-    "What motivates you to join this domain?",
+    "What motivates you to join SAE?",
+    "Enter Your Club preferences.",
   ];
 
+
+  const departmentOptions = [
+    { value: "BT", label: "BT" },
+    { value: "CSE", label: "CSE" },
+    { value: "CE", label: "CE" },
+    { value: "CHE", label: "CHE" },
+    { value: "ECE", label: "ECE" },
+    { value: "EE", label: "EE" },
+    { value: "ME", label: "ME" },
+    { value: "MME", label: "MME" },
+    { value: "MnC", label: "MnC" },
+    { value: "Others", label: "Others" },
+    
+  ];
   const genderOptions = [
     { value: "Male", label: "Male" },
     { value: "Female", label: "Female" },
@@ -59,7 +69,6 @@ const RegisterPage = () => {
     Second: [
       { value: "Automobiles ,", label: "Automobiles" },
       { value: "Robotics/ML ,", label: "Robotics/ML" },
-      { value: "Event Management ,", label: "Event Management" },
     ],
   };
 
@@ -104,6 +113,13 @@ const RegisterPage = () => {
     setFormData((prev) => ({
       ...prev,
       gender: selectedOption ? selectedOption.value : "",
+    }));
+  };
+
+  const handleDepartmentChange = (selectedOption) => {
+    setFormData((prev) => ({
+      ...prev,
+      department: selectedOption ? selectedOption.value : "",
     }));
   };
   const handleYearChange = (selectedOption) => {
@@ -276,7 +292,7 @@ const RegisterPage = () => {
                     style={{ paddingLeft: "35px" }}
                   />
                 </div>
-                <div style={{ position: "relative" }} className="userinput">
+                {/* <div style={{ position: "relative" }} className="userinput">
                   <FontAwesomeIcon
                     icon={faBuilding}
                     style={{
@@ -286,8 +302,8 @@ const RegisterPage = () => {
                       transform: "translateY(-50%)",
                       color: "#fff",
                     }}
-                  />
-                  <input
+                  /> */}
+                  {/* <input
                     type="text"
                     name="department"
                     placeholder="Enter Your Department"
@@ -295,8 +311,14 @@ const RegisterPage = () => {
                     onChange={handleInputChange}
                     required
                     style={{ paddingLeft: "35px" }}
-                  />
-                </div>
+                  /> */}
+                {/* </div> */}
+                <Select
+                  className="departmentoption"
+                  options={departmentOptions}
+                  onChange={handleDepartmentChange}
+                  placeholder="Select Department"
+                />
                 <Select
                   className="genderoption"
                   options={genderOptions}
@@ -373,49 +395,49 @@ const RegisterPage = () => {
         </div>
 
       );
+    // case 3:
+    //   return (
+
+    //     <div className="qmain">
+    //     <div className="qcontainer">
+    //       <div className="qcontain">
+    //         {questions2.map((question2, index) => (
+    //           <div key={index} className="question-block">
+    //             <div className="ques">
+    //               <h1>{question2}</h1>
+    //             </div>
+    //             <textarea
+    //               name={`question2_${index}`} // Use unique name attribute
+    //               placeholder="Enter Your Answer..."
+    //               value={formData.questions_answers2[question2] || ""} // Ensure unique storage per question2
+    //               onChange={(e) =>
+    //                 setFormData((prevData) => ({
+    //                   ...prevData,
+    //                   questions_answers2: {
+    //                     ...prevData.questions_answers2,
+    //                     [question2]: e.target.value, // Store by question text
+    //                   },
+    //                 }))
+    //               }
+    //             ></textarea>
+
+    //           </div>
+    //         ))}
+    //       </div>
+    //       <div className="button-container">
+    //         <button type="button" onClick={prevStep} className="btn">
+    //           Back
+    //         </button>
+    //         <button type="button" onClick={nextStep} className="btn">
+    //           Next
+    //         </button>
+    //       </div>
+    //     </div>
+    //     </div>
+    //   );
+
+
     case 3:
-      return (
-
-        <div className="qmain">
-        <div className="qcontainer">
-          <div className="qcontain">
-            {questions2.map((question2, index) => (
-              <div key={index} className="question-block">
-                <div className="ques">
-                  <h1>{question2}</h1>
-                </div>
-                <textarea
-                  name={`question2_${index}`} // Use unique name attribute
-                  placeholder="Enter Your Answer..."
-                  value={formData.questions_answers2[question2] || ""} // Ensure unique storage per question2
-                  onChange={(e) =>
-                    setFormData((prevData) => ({
-                      ...prevData,
-                      questions_answers2: {
-                        ...prevData.questions_answers2,
-                        [question2]: e.target.value, // Store by question text
-                      },
-                    }))
-                  }
-                ></textarea>
-
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <button type="button" onClick={prevStep} className="btn">
-              Back
-            </button>
-            <button type="button" onClick={nextStep} className="btn">
-              Next
-            </button>
-          </div>
-        </div>
-        </div>
-      );
-
-
-    case 4:
       return (
         <div className="formreview">
           {loading && <LoadingOverlay/>} {/* Show overlay if loading */}

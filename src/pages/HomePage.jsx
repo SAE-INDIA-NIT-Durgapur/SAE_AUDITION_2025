@@ -1,5 +1,5 @@
 import React from "react";
-import ThreeDScene from "../components/ThreeDScene";
+// import ThreeDScene from "../components/ThreeDScene";
 import { Typewriter } from "react-simple-typewriter";
 
 import "./HomePage.css";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import CountdownTimer from "../components/CountdownTimer/CountdownTimer";
 import Timeline from "../components/TimeLine.jsx/TimeLine";
 import EntryDomains from "../components/EntryDomains/EntryDomains";
+import WhySAE from "../components/WhySAE/WhySAE";
 // import Test from "../components/Test/Test";
 
 
@@ -47,7 +48,7 @@ const HomePage = () => {
               <div
                 id="tenth"
                 className="reg-buttonBox "
-                onClick={() => navigate("/register")}
+                onClick={() => navigate("/googleAuth")}
               >
                 <button className=" homebtn ">
                   <span>R</span>
@@ -69,7 +70,7 @@ const HomePage = () => {
             {/* <ThreeDScene /> */}
             <img
               className="w-[400px] h-[350px] lg:w-full lg:h-full object-center "
-              src="/Images/pngwing.com (6).png"
+              src="../../Images/pngwing.com (6).png"
               alt=""
             />
           </div>
@@ -77,6 +78,9 @@ const HomePage = () => {
 
         <div className="w-full h-auto  text-white flex flex-col items-center justify-center">
           <CountdownTimer />
+        </div>
+        <div className="w-full h-auto  text-white flex flex-col items-center justify-center mb-14">
+          <WhySAE/>
         </div>
         <div className="w-full h-auto  text-white flex flex-col items-center justify-center">
           <EntryDomains />
