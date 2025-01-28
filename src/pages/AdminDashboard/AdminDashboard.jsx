@@ -7,24 +7,27 @@ const AdminDashboard = () => {
     const [Rollquery, setRollquery] = useState('');
     const [Domainquery, setDomainquery] = useState('');
     const [Genderquery, setGenderquery] = useState('');
+    const API_ENDPOINT_URL = import.meta.env.VITE_API_URL;
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/auditionform/');
+            const auditonform_url = API_ENDPOINT_URL+"/api/auditionform/";
+            const response = await axios.get(auditonform_url);
             setSubmittedData(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
     const handledelete = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/delete/${id}`); // Send DELETE request to backend
+        await axios.delete(`https://web-production-a1bf.up.railway.app/${id}/`); // Send DELETE request to backend
         // Update UI by removing deleted item
         fetchData();
 
     }
     const handleNameSearch = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/search/', {
+          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const response = await axios.get(search_url, {
             params: { Namequery },
           });
           setSubmittedData(response.data);
@@ -34,7 +37,8 @@ const AdminDashboard = () => {
       };
     const handleRollSearch = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/search/', {
+          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const response = await axios.get(search_url, {
             params: { Rollquery },
           });
           setSubmittedData(response.data);
@@ -44,7 +48,8 @@ const AdminDashboard = () => {
       };
     const handleDomainSearch = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/search/', {
+          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const response = await axios.get(search_url, {
             params: { Domainquery },
           });
           setSubmittedData(response.data);
@@ -54,7 +59,8 @@ const AdminDashboard = () => {
       };
     const handleGenderSearch = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/search/', {
+          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const response = await axios.get(search_url, {
             params: { Genderquery },
           });
           setSubmittedData(response.data);

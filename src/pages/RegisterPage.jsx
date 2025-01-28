@@ -8,6 +8,7 @@ import { UserDataContext } from "../context/UserContext";
 import "./RegisterPage.css";
 import LoadingOverlay from "../components/Loading/LoadingOverlay";
 const RegisterPage = () => {
+  const API_ENDPOINT_URL = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { user } = useContext(UserDataContext);
@@ -129,8 +130,9 @@ const RegisterPage = () => {
     const { email } = formData;
 
     try {
+      const audition_url = API_ENDPOINT_URL + "/api/auditionform/";
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/auditionform/",
+        audition_url,
         formData,
         {
           method: "POST",
@@ -163,7 +165,8 @@ const RegisterPage = () => {
         setLoading(false); // Hide loading overlay
       }
       try {
-            await fetch("http://localhost:8000/send-email-to-user/", {
+            const send_email_url = API_ENDPOINT_URL + "/api/send-email-to-user/";
+            await fetch(send_email_url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

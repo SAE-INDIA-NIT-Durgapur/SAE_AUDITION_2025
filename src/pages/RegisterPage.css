@@ -470,6 +470,7 @@
     width: 60%;
   }
   .formcontainer form{
+    height: 75%;
     h1{
       font-size: 8vw;
     }

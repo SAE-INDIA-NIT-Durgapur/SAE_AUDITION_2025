@@ -69,7 +69,7 @@ const HomePage = () => {
             {/* <ThreeDScene /> */}
             <img
               className="w-[400px] h-[350px] lg:w-full lg:h-full object-center "
-              src="../../Images/pngwing.com (6).png"
+              src="/Images/pngwing.com (6).png"
               alt=""
             />
           </div>

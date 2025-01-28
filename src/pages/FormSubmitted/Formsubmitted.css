@@ -4,7 +4,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    background: url("../../assets/Sonu/submitbg.jpg");
+    background: url("/Images/submitbg.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -16,8 +16,10 @@ const AdminLogin = () => {
   const [loading, setLoading] = useState(false);
   const SUPER_USER = import.meta.env.VITE_SUPER_USER;
   const SUPER_PASS = import.meta.env.VITE_SUPER_PASS;
+  const API_ENDPOINT_URL = import.meta.env.VITE_API_URL;
   // Function to handle sending OTP
   const handleSendOtp = async (e) => {
+
     e.preventDefault();
     if (username === SUPER_USER || password === SUPER_PASS) {
       navigate("/dashboard");
@@ -30,7 +32,8 @@ const AdminLogin = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:8000/api/send-otp/", {
+      const send_otp_url = API_ENDPOINT_URL+"/api/send-otp/";
+      const response = await axios.post(send_otp_url, {
         email: email, // Ensure email is passed dynamically
       });
       if (response.status === 200) {
@@ -50,14 +53,16 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
       // First, authenticate the user
-      const response = await axios.post("http://localhost:8000/api/login/", {
+      const login_url = API_ENDPOINT_URL+"/api/login/";
+      const response = await axios.post(login_url, {
         username,
         password,
       });
 
       // Second, verify OTP
+      const verify_otp_url = API_ENDPOINT_URL+"/api/verify-otp/";
       const response2 = await axios.post(
-        "http://localhost:8000/api/verify-otp/",
+        verify_otp_url,
         {
           email: email, // Make sure to pass the email dynamically
           otp: otp,
@@ -158,7 +163,7 @@ const AdminLogin = () => {
        
         <img
           className="lg:w-[600px] lg:h-[600px]   "
-          src="../../Images/pngwing.com (7).png"
+          src="/Images/pngwing.com (7).png"
           alt=""
         />
       </div>

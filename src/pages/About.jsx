@@ -22,7 +22,7 @@ function About() {
           <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row-reverse mx-10 my-28 lg:mx-36 lg:my-28 lg:justify-between">
             <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
               <img
-                src="../../../Images/6617e9667ea53b0c8bd3b345.jpg" //
+                src="/Images/6617e9667ea53b0c8bd3b345.jpg" //
                 alt="Image"
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-left"
@@ -68,7 +68,7 @@ function About() {
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-left"
                 loop
-                src="../../../Videos/BAJAVideo.mp4"
+                src="/Videos/BAJAVideo.mp4"
                 muted
                 autoPlay
               />
@@ -99,7 +99,7 @@ function About() {
           <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
             <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
               <img
-                src="../../../Images/Screenshot-2024-08-22-095908.png"
+                src="/Images/Screenshot-2024-08-22-095908.png"
                 alt="Aarohan"
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-right"
@@ -143,7 +143,7 @@ function About() {
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-left"
                 loop
-                src="../../../Videos/sdvvideo2.mp4"
+                src="/Videos/sdvvideo2.mp4"
                 muted
                 autoPlay
               />
@@ -214,7 +214,7 @@ function About() {
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-left"
                 loop
-                src="../../../Videos/AIML_Workshop2.0.mp4"
+                src="/Videos/AIML_Workshop2.0.mp4"
                 muted
                 autoPlay
               />
@@ -247,7 +247,7 @@ function About() {
           <div className="  flex max-w-full flex-col  rounded-md  lg:flex-row mx-10 my-10 lg:mx-36 lg:my-28 lg:justify-between">
             <div className="h-full w-full lg:h-[400px] lg:w-[590px] ">
               <img
-                src="../../../Images/FIST.png"
+                src="/Images/FIST.png"
                 alt="Aarohan"
                 className="h-full w-full lg:h-[400px] lg:w-[590px] rounded-md object-center"
                 data-aos="fade-right"

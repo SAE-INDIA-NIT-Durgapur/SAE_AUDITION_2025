@@ -26,7 +26,7 @@ const handleGoogleLogin = (credentialResponse) => {
   } catch (error) {
     console.error("Error decoding Google token:", error);
   }
-    navigate("/register");
+  navigate("/register");
 
 };
 
