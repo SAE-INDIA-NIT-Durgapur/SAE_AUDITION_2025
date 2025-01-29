@@ -445,7 +445,7 @@ const RegisterPage = () => {
             <div className="details">
 
               <h2><span style={{ textTransform: "uppercase", color: "red" }}>Final Step </span>: Review Details</h2>
-              <p>
+              <p style={{textTransform:"uppercase"}}>
                 <strong>Name  :  </strong> {formData.name}
               </p>
               <p>

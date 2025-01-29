@@ -8,7 +8,7 @@ import LoadingOverlay from "../../components/LoadingOverlay/LoadingOverlay";
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState(""); //saeindia@nitdgp.ac.in
   const [email, setEmail] = useState("saeindia@nitdgp.ac.in"); // Added email state
   const [error, setError] = useState(null);
   const [isOtpSent, setIsOtpSent] = useState(false); // To track OTP sent status
@@ -22,30 +22,36 @@ const AdminLogin = () => {
 
     e.preventDefault();
     if (username === SUPER_USER || password === SUPER_PASS) {
-      navigate("/dashboard");
-      return;
-    }
-
-    if (!email) {
-      alert("Please enter a valid email.");
+      navigate("/sae-admin-dashboard");
       return;
     }
     setLoading(true);
-    try {
-      const send_otp_url = API_ENDPOINT_URL+"/api/send-otp/";
-      const response = await axios.post(send_otp_url, {
-        email: email, // Ensure email is passed dynamically
-      });
-      if (response.status === 200) {
-        setIsOtpSent(true);
-        // alert("OTP sent successfully to Admin email!");
+    const login_url = API_ENDPOINT_URL+"/api/login/";
+    const response = await axios.post(login_url, {
+      username,
+      password,
+    });
+    if (response.status === 200) {
+      try {
+        const send_otp_url = API_ENDPOINT_URL+"/api/send-otp/";
+        const response2 = await axios.post(send_otp_url, {
+          email: email, // Ensure email is passed dynamically
+        });
+        if (response2.status === 200) {
+          setIsOtpSent(true);
+          // alert("OTP sent successfully to Admin email!");
+        }
+      } catch (error) {
+        console.error("Error:", error.response || error);
+        alert("Error sending OTP. Please try again!");
+      } finally {
+        setLoading(false); // Stop loading after request is complete
       }
-    } catch (error) {
-      console.error("Error:", error.response || error);
-      alert("Error sending OTP. Please try again!");
-    } finally {
-      setLoading(false); // Stop loading after request is complete
+    }else{ 
+      setError("Invalid credentials.");
+      setLoading(false);
     }
+
   };
 
   // Function to handle login form submission
@@ -70,7 +76,7 @@ const AdminLogin = () => {
       );
 
       if (response.status === 200 && response2.status === 200) {
-        navigate("/dashboard"); // Redirect on successful login and OTP verification
+        navigate("/sae-admin-dashboard"); // Redirect on successful login and OTP verification
       } else {
         setError("Invalid OTP.");
       }

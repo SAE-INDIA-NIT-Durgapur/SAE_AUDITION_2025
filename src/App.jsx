@@ -64,7 +64,7 @@ function App() {
           }
         />
         <Route
-          path="/dashboard"
+          path="/sae-admin-dashboard"
           element={
             <MainLayout>
               <AdminDashboard />
