@@ -63,14 +63,14 @@ const CircularClock = ({ value, label, maxValue }) => {
     ctx.beginPath();
     ctx.moveTo(centerX, centerY);
     ctx.lineTo(needleEndX, needleEndY);
-    ctx.strokeStyle = "rgb(166,4,4)";
+    ctx.strokeStyle = "rgb(255, 11, 11)";
     ctx.lineWidth = 3;
     ctx.stroke();
 
     // Draw center dot
     ctx.beginPath();
     ctx.arc(centerX, centerY, 4, 0, 2 * Math.PI);
-    ctx.fillStyle = "rgb(166,4,4)";
+    ctx.fillStyle = "rgb(255, 11, 11)";
     ctx.fill();
   }, [value, maxValue]);
 

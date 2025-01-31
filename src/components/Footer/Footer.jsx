@@ -50,7 +50,7 @@ const Footer = () => {
               <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-custom-color"></span>
             </h3>
             <nav className="space-y-4 flex flex-col">
-              <NavLink to="/home" className="hover:text-[rgb(166,4,4)]">
+              <NavLink to="/" className="hover:text-[rgb(166,4,4)]">
                 Home
               </NavLink>
 
