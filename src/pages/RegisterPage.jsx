@@ -158,7 +158,7 @@ const RegisterPage = () => {
           body: JSON.stringify(formData),
         }
       );
-      const scriptURL = SHEET_URL; // Your Google 
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzSGpZ8QTbNbvuaJSLlswudJ3L-LhiuIa-HzQRtKQV2KhuKr9bVYb8jUciInmqBwI-7/exec"; // Your Google 
       const sheetId = SHEET_ID;  // Your Google Sheet ID
       try {
         const response = await fetch(scriptURL, {
