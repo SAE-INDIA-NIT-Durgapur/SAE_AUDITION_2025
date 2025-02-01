@@ -58,7 +58,7 @@ const Footer = () => {
                 About Sae
               </NavLink>
 
-              <NavLink to="/register" className="hover:text-[rgb(166,4,4)]">
+              <NavLink to="/googleAuth" className="hover:text-[rgb(166,4,4)]">
                 Register
               </NavLink>
 
