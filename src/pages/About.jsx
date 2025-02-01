@@ -182,7 +182,7 @@ function About() {
                 Drag & Drift
               </h1>
               <p
-                className="mt-5 md:text-lg  text-base text-black"
+                className="mt-5 md:text-lg text-base"
                 data-aos="fade-up-left"
               >
                 SAE presents an electrifying event 'Drag & Drift' where participants navigate intricate maze designs filled with challenging obstacles. This event not only tests your ability to skillfully dodge these pesky barriers but also deepens your understanding of the car's underlying mechanics.
