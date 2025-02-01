@@ -9,7 +9,7 @@ const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [otp, setOtp] = useState(""); //saeindia@nitdgp.ac.in
-  const [email, setEmail] = useState("sonu77mahata@gmail.com"); // Added email state
+  const [email, setEmail] = useState("saeindia@nitdgp.ac.in"); // saeindia@nitdgp.ac.in
   const [error, setError] = useState(null);
   const [isOtpSent, setIsOtpSent] = useState(false); // To track OTP sent status
   const navigate = useNavigate();
