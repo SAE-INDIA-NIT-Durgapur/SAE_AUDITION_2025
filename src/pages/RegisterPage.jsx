@@ -9,6 +9,8 @@ import "./RegisterPage.css";
 import LoadingOverlay from "../components/Loading/LoadingOverlay";
 const RegisterPage = () => {
   const API_ENDPOINT_URL = import.meta.env.VITE_API_URL;
+  const SHEET_URL = import.meta.env.VITE_SHEET_URL;
+  const SHEET_ID = import.meta.env.VITE_SHEET_ID;
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { user } = useContext(UserDataContext);
@@ -156,9 +158,8 @@ const RegisterPage = () => {
           body: JSON.stringify(formData),
         }
       );
-      const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzSGpZ8QTbNbvuaJSLlswudJ3L-LhiuIa-HzQRtKQV2KhuKr9bVYb8jUciInmqBwI-7/exec"; // Your Google 
-      const sheetId = "1itBcM8lQNnY4Do0NUlFV6EA3x9UbwH0OcSpcTB7zxRQ";
+      const scriptURL = SHEET_URL; // Your Google 
+      const sheetId = SHEET_ID;  // Your Google Sheet ID
       try {
         const response = await fetch(scriptURL, {
           method: 'POST',
