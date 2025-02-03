@@ -87,6 +87,7 @@ const AdminLogin = () => {
   
       if (response.status === 200) {
         localStorage.setItem("accessToken", token);
+        // console.log(token);
         setTimeout(() => {
           navigate("/sae-admin-dashboard");
         }, 500);

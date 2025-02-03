@@ -148,7 +148,7 @@ const RegisterPage = () => {
     const { email } = formData;
 
     try {
-      const audition_url = API_ENDPOINT_URL + "/api/auditionform/";
+      const audition_url = API_ENDPOINT_URL + "api/auditionform/";
       const response = await axios.post(
         audition_url,
         formData,
@@ -183,7 +183,7 @@ const RegisterPage = () => {
         setLoading(false); // Hide loading overlay
       }
       try {
-            const send_email_url = API_ENDPOINT_URL + "/api/send-email-to-user/";
+            const send_email_url = API_ENDPOINT_URL + "api/send-email-to-user/";
             await fetch(send_email_url, {
             method: "POST",
             headers: {

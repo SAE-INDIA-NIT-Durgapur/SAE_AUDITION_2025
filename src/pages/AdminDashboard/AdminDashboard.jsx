@@ -27,7 +27,8 @@ const AdminDashboard = () => {
   
         try {
           // Send a GET request to the Django backend to validate the token
-          const response = await axios.get("http://localhost:8000/api/validate-token/", {
+          const validate_url = `${API_ENDPOINT_URL}api/validate-token/`;
+          const response = await axios.get(validate_url, {
             headers: {
               Authorization: `Bearer ${token}`,  // Include the token in the Authorization header
             },
@@ -49,7 +50,7 @@ const AdminDashboard = () => {
     const refreshAccessToken = async () => {
       try {
         const refreshToken = localStorage.getItem("refreshToken");
-        const response = await axios.post(`${API_ENDPOINT_URL}/api/token/refresh/`, { refresh: refreshToken });
+        const response = await axios.post(`${API_ENDPOINT_URL}api/token/refresh/`, { refresh: refreshToken });
     
         if (response.data.access) {
           localStorage.setItem("accessToken", response.data.access);
@@ -64,7 +65,7 @@ const AdminDashboard = () => {
     };
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${API_ENDPOINT_URL}/api/auditionform/`, {
+        const response = await axios.get(`${API_ENDPOINT_URL}api/auditionform/`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         setSubmittedData(response.data);
@@ -88,7 +89,7 @@ const AdminDashboard = () => {
   // };
     const handledelete = async (id) => {
       try {
-        await axios.delete(`${API_ENDPOINT_URL}/api/delete/${id}/`, {
+        await axios.delete(`${API_ENDPOINT_URL}api/delete/${id}/`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         fetchData();
@@ -99,7 +100,7 @@ const AdminDashboard = () => {
     }
     const handleNameSearch = async () => {
         try {
-          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const search_url = API_ENDPOINT_URL+"api/search/";
           const response = await axios.get(search_url, {
             params: { Namequery },
           });
@@ -110,7 +111,7 @@ const AdminDashboard = () => {
       };
     const handleRollSearch = async () => {
         try {
-          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const search_url = API_ENDPOINT_URL+"api/search/";
           const response = await axios.get(search_url, {
             params: { Rollquery },
           });
@@ -121,7 +122,7 @@ const AdminDashboard = () => {
       };
     const handleDomainSearch = async () => {
         try {
-          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const search_url = API_ENDPOINT_URL+"api/search/";
           const response = await axios.get(search_url, {
             params: { Domainquery },
           });
@@ -132,7 +133,7 @@ const AdminDashboard = () => {
       };
     const handleGenderSearch = async () => {
         try {
-          const search_url = API_ENDPOINT_URL+"/api/search/";
+          const search_url = API_ENDPOINT_URL+"api/search/";
           const response = await axios.get(search_url, {
             params: { Genderquery },
           });
@@ -204,7 +205,7 @@ const AdminDashboard = () => {
             <button
         onClick={() => {
           localStorage.removeItem("accessToken");
-          navigate("/admin-login");
+          navigate("/adminLogin");
         }}
       >
         Logout
