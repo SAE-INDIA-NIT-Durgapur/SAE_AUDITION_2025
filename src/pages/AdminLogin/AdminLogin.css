@@ -114,8 +114,17 @@ align-items: center;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  flex-direction: column;
+  p{
+    font-size: 1.5vw;
+  }
+
 }
 @media screen and (max-width: 426px) {
+  .formcontain p{
+      font-size: 5vw;
+    
+  }
   .admin-img{
     display: none;
   }

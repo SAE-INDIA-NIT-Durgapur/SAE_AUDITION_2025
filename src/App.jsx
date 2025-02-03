@@ -13,7 +13,7 @@ import MainLayout from "./Layouts/MainLayout";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import Formsubmitted from "./pages/FormSubmitted/Formsubmitted";
 import Background from "./pages/Background/Background";
-
+import ProtectedRoute from "./pages/PrivateRoute";
 function App() {
   return (
     <>
@@ -63,12 +63,14 @@ function App() {
             </MainLayout>
           }
         />
-        <Route
+        <Route 
           path="/sae-admin-dashboard"
           element={
+            <ProtectedRoute>
             <MainLayout>
               <AdminDashboard />
             </MainLayout>
+            </ProtectedRoute>
           }
         />
         <Route

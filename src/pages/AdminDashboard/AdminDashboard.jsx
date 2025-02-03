@@ -1,27 +1,100 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./AdminDashboard.css";
+import { useNavigate } from "react-router-dom";
 const AdminDashboard = () => {
+    const navigate = useNavigate();
     const [submittedData, setSubmittedData] = useState([]);
     const [Namequery, setNamequery] = useState('');
     const [Rollquery, setRollquery] = useState('');
     const [Domainquery, setDomainquery] = useState('');
     const [Genderquery, setGenderquery] = useState('');
     const API_ENDPOINT_URL = import.meta.env.VITE_API_URL;
+    // const [token, setToken] = useState(localStorage.getItem('accessToken'));
+    const token = localStorage.getItem("accessToken");
+    console.log("Access Token:", localStorage.getItem("accessToken"));
+    console.log("Refresh Token:", localStorage.getItem("refreshToken"));
 
-    const fetchData = async () => {
-        try {
-            const auditonform_url = API_ENDPOINT_URL+"/api/auditionform/";
-            const response = await axios.get(auditonform_url);
-            setSubmittedData(response.data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
+    useEffect(() => {
+      const validateToken = async () => {
+        const token = localStorage.getItem("accessToken");  // Retrieve the token from localStorage
+  
+        if (!token) {
+          // If no token, navigate to the login page
+          navigate("/adminLogin");
+          return;
         }
+  
+        try {
+          // Send a GET request to the Django backend to validate the token
+          const response = await axios.get("http://localhost:8000/api/validate-token/", {
+            headers: {
+              Authorization: `Bearer ${token}`,  // Include the token in the Authorization header
+            },
+          });
+  
+          if (response.status === 200) {
+            // If the token is valid, stay on the current page
+            console.log("Token is valid");
+          }
+        } catch (error) {
+          // If the token is invalid or expired, navigate to the login page
+          console.log("Invalid token");
+          navigate("/adminLogin");
+        }
+      };
+  
+      validateToken();
+    }, [navigate]);
+    const refreshAccessToken = async () => {
+      try {
+        const refreshToken = localStorage.getItem("refreshToken");
+        const response = await axios.post(`${API_ENDPOINT_URL}/api/token/refresh/`, { refresh: refreshToken });
+    
+        if (response.data.access) {
+          localStorage.setItem("accessToken", response.data.access);
+          return response.data.access; // Return new token
+        }
+      } catch (error) {
+        console.error("Error refreshing token:", error);
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+        return null;
+      }
     };
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${API_ENDPOINT_URL}/api/auditionform/`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        setSubmittedData(response.data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        if (error.response && error.response.status === 401) {
+            refreshAccessToken();
+        }
+    }
+    };
+  //   const refreshAccessToken = async () => {
+  //     try {
+  //         const refreshToken = localStorage.getItem('refreshToken');
+  //         const response = await axios.post(`${API_ENDPOINT_URL}/api/token/refresh/`, { refresh: refreshToken });
+  //         localStorage.setItem('accessToken', response.data.access);
+  //         setToken(response.data.access);
+  //         fetchData();
+  //     } catch (error) {
+  //         console.error('Error refreshing access token:', error);
+  //     }
+  // };
     const handledelete = async (id) => {
-        await axios.delete(`https://web-production-a1bf.up.railway.app/api/delete/${id}/`); // Send DELETE request to backend
-        // Update UI by removing deleted item
+      try {
+        await axios.delete(`${API_ENDPOINT_URL}/api/delete/${id}/`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
         fetchData();
+    } catch (error) {
+        console.error('Error deleting record:', error);
+    }
 
     }
     const handleNameSearch = async () => {
@@ -128,6 +201,14 @@ const AdminDashboard = () => {
                 {/* <img style={{width: "10%",height: "auto"}} src="https://swarajjaiswal.github.io/saeevents/logo.png" alt="Logo" /> */}
                 <p style={{color:"#fff"}}>welcome to <span style={{color:"#1ced31", fontWeight:"bolder"}} >admin</span> panel</p>
             </div>
+            <button
+        onClick={() => {
+          localStorage.removeItem("accessToken");
+          navigate("/admin-login");
+        }}
+      >
+        Logout
+      </button>
             <div className="searchbars">
               
                 <div className="search">
