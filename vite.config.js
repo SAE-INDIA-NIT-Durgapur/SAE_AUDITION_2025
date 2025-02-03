@@ -3,12 +3,12 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    historyApiFallback: true, // Ensures all routes go to index.html
+
+  base: "/",
+  build: {
+    outDir: "dist",
   },
-  resolve: {
-    alias: {
-      "@": "/src",
-    },
+  server: {
+    historyApiFallback: true,
   },
 });
