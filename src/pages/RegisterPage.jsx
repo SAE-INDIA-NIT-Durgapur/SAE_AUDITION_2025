@@ -9,6 +9,8 @@ import "./RegisterPage.css";
 import LoadingOverlay from "../components/Loading/LoadingOverlay";
 const RegisterPage = () => {
   const API_ENDPOINT_URL = import.meta.env.VITE_API_URL;
+  
+  const SHEET_ID = import.meta.env.VITE_SHEET_ID;
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { user } = useContext(UserDataContext);
@@ -146,7 +148,7 @@ const RegisterPage = () => {
     const { email } = formData;
 
     try {
-      const audition_url = API_ENDPOINT_URL + "/api/auditionform/";
+      const audition_url = API_ENDPOINT_URL + "api/auditionform/";
       const response = await axios.post(
         audition_url,
         formData,
@@ -156,9 +158,9 @@ const RegisterPage = () => {
           body: JSON.stringify(formData),
         }
       );
-      const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzSGpZ8QTbNbvuaJSLlswudJ3L-LhiuIa-HzQRtKQV2KhuKr9bVYb8jUciInmqBwI-7/exec"; // Your Google 
-      const sheetId = "1itBcM8lQNnY4Do0NUlFV6EA3x9UbwH0OcSpcTB7zxRQ";
+      const SHEET_URL = import.meta.env.VITE_SCRIPT_URL;
+      const scriptURL = SHEET_URL; // Your Google 
+      const sheetId = SHEET_ID;  // Your Google Sheet ID
       try {
         const response = await fetch(scriptURL, {
           method: 'POST',
@@ -181,7 +183,7 @@ const RegisterPage = () => {
         setLoading(false); // Hide loading overlay
       }
       try {
-            const send_email_url = API_ENDPOINT_URL + "/api/send-email-to-user/";
+            const send_email_url = API_ENDPOINT_URL + "api/send-email-to-user/";
             await fetch(send_email_url, {
             method: "POST",
             headers: {
